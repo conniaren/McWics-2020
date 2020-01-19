@@ -15,7 +15,7 @@ class ProfileScreen extends React.Component {
         <Text>Details Screen</Text>
         <Button
           title="Go to Details... again"
-          onPress={() => this.props.navigation.navigate('Profile')}
+          onPress={() => alert('You tapped the boton!')}
         />
       </View>
     );
@@ -42,7 +42,7 @@ class HomeScreen extends React.Component {
         <Text style={styles.instructions}>Track your fresh foods the day they sit in. Save Waste. </Text>
         <View style={{flex: 2, backgroundColor: 'skyblue'}} />
         <Button 
-            onPress={this._onPressButton}
+            onPress={() => this.props.navigation.navigate('Profile')}
             title="Press Me"
           />
         <View style={{flex: 3, backgroundColor: 'steelblue'}} />
