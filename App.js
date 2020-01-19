@@ -7,7 +7,11 @@
  */
 
 import React, { Component } from 'react';
-
+// import { TextInput } from 'react-native-paper';
+// import { TextField } from '@material-ui/core';
+//import PasswordInputText from 'react-native-hide-show-password-input';
+// import { createAppContainer } from 'react-navigation';
+// import { createStackNavigator } from 'react-navigation-stack';
 import {
   SafeAreaView,
   StyleSheet,
@@ -17,7 +21,6 @@ import {
   StatusBar,
   Button,
   TextInput,
-  Image,
   TouchableHighlight,
   TouchableOpacity,
   TouchableNativeFeedback,
@@ -32,42 +35,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {
-  StackNavigator,
-} from 'react-navigation';
-
-import {
-  createAppContainer,
-} from 'react-navigation';
-
-import {
-  createStackNavigator,
-} from 'react-navigation-stack';
-
-
-
-//FunctionToOpenNext = () => {
-//  this.props.navigation.navigate("Second");
-//}
-
-{/*export default class ButtonBasics extends Component {
+export default class ButtonBasics extends Component {
   _onPressButton() {
-  //  this.props.navigation.navigate("Second");
-  alert('You tapped the button!')
+    alert('You tapped the button!')
   }
-}
 
-*/}
-
-class HomeScreen extends Component {
-    static navigationOptions = {
-      title: "Welcome",
-    };
-  
   
 
   render() {
-    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
@@ -94,49 +69,38 @@ class HomeScreen extends Component {
             color="#841584"
           />
         </View>
-           <Text style={styles.niceText}> YOUR PERSONAL FRIDGE </Text>
-            <Text style={styles.sectionDescription}> Please enter a food item: </Text>
+            <Text style={styles.niceText}>YOUR DIGITAL FRIDGE</Text>
+
+            <Text style={styles.sectionDescription}> Please enter your food item: </Text>
             <TextInput
 
-              style={{height:50,
-                      paddingHorizontal: 50,
+              style={{height:40,
+                      paddingHorizontal: 40,
                       marginLeft: 20,
                       marginTop: 100,
                       
             }}
-              placeholder='Food item'
+              placeholder='Food Item'
             />
-            
             
             <TextInput style={{height:40,
             paddingHorizontal: 40,
             marginLeft: 20,
             marginTop: 60,
+            marginBottom: 60,
             }}
-            placeholder='Password'
+            placeholder='Date of purchase'
             />
-
             
             
-            <Image 
-            style={{width: 50, height: 50, justifyContent: 'center', alignItems: 'center'}}
-            source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png' }}
-            />
-
         <View style={styles.buttonContainer}>
               <Button
                 style={{padding: 40}}
-                onPress={
-                 // this.FunctionToOpenNext
-                () => navigate('Next', {name: Next})
-                  
-                
-                //  alert('You have logged in');
-                
+                onPress={() => { alert('You have logged in');
             
-                }
-              
-                title="NEXT"
+                }}
+                
+                title="Next"
                 color='black'
               />
             </View>
@@ -145,40 +109,6 @@ class HomeScreen extends Component {
     );
   }
 }
-
-
-class NextScreen extends Component {
-  static navigationOptions = {
-    title: 'SecondPage',
-  };
-render()
-{
-  return(
-    <View>
-    <Text style = { styles.niceText }> This is the Second Page </Text>
-    </View>
-  );
-}
-}
-
-const MainNavigator = createStackNavigator({
-  Home: HomeScreen,
-  Next: NextScreen,
-
-},
-{
-  initialRouteName: 'Home',
-}
-);
-
-const AppContainer = createAppContainer(MainNavigator);
-
-export default class App extends React.Component {
-  render(){
-    return <AppContainer />;
-  }
-}
-
 
 
 
@@ -214,10 +144,10 @@ backgroundColor: Colors.lighter,
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
-    textAlign: 'center',
-    fontWeight: '400',
     fontFamily: 'Helvetica',
     fontStyle: 'italic',
+    textAlign: 'center',
+    fontWeight: '400',
     color: Colors.dark,
   },
   highlight: {
@@ -246,8 +176,6 @@ backgroundColor: Colors.lighter,
   }
   
 });
-
-
 
 
 // export default App;
