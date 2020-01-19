@@ -21,11 +21,16 @@ import {
   StatusBar,
   Button,
   TextInput,
+  Image,
+  AppRegistry,
   TouchableHighlight,
   TouchableOpacity,
   TouchableNativeFeedback,
   TouchableWithoutFeedback
 } from 'react-native';
+
+import Slider from "react-native-slider";
+
 
 import {
   Header,
@@ -35,16 +40,32 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+
+
+
+
+
 export default class ButtonBasics extends Component {
   _onPressButton() {
     alert('You tapped the button!')
   }
+
+ 
 
   
 
   render() {
     return (
       <View style={styles.container}>
+        <TouchableOpacity 
+        activeOpacity={5.0}
+        onPress={this._onPressButton}>
+          <Image 
+          style={{width: 100, height: 100}}
+          source={require('./tupperware2.png')}
+          />
+        </TouchableOpacity>
         <View style={styles.buttonContainer}>
           <Button
             onPress={this._onPressButton}
@@ -125,6 +146,24 @@ backgroundColor: Colors.lighter,
     fontFamily: 'Helvetica',
                                  
 },
+  container: {
+    flex: 1,
+    marginLeft: 10,
+    marginRight: 10,
+    alignItems: "stretch",
+    justifyContent: "center"
+  },
+  FacebookStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#485a96',
+    borderWidth: .5,
+    borderColor: '#fff',
+    height: 40,
+    borderRadius: 5 ,
+    margin: 5,
+   
+  },
   engine: {
     position: 'absolute',
     right: 0,
