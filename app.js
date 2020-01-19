@@ -227,12 +227,49 @@ import LinearGradient from 'react-native-linear-gradient';
 import AwesomeButton from 'react-native-really-awesome-button/src/themes/rick';
 import tupper from './tupperware2.png'
  
+class ThirdOne extends React.Component {
+ render() {
+   return (
+     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' , backgroundColor:'powderblue'}}>
+       <Image
+          style={{width: 200, height: 200}}
+          source={require('./grapes.png')}
+        />
+
+       <Text>Quantity: 1 </Text>
+
+       <Text> Expiry Date: 16 days </Text>
+     </View>
+   );
+ }
+}class SecondOne extends React.Component {
+ render() {
+   return (
+     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' , backgroundColor:'powderblue'}}>
+       <Image
+          style={{width: 200, height: 200}}
+          source={require('./mangoes.png')}
+        />
+
+       <Text>Quantity: 3 </Text>
+
+       <Text> Expiry Date: 12 days </Text>
+     </View>
+   );
+ }
+}
 class AnothaOne extends React.Component {
  render() {
    return (
-     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-       <Text>Apples</Text>
-       <Text> Lasts 5 more days </Text>
+     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' , backgroundColor:'powderblue'}}>
+       <Image
+          style={{width: 200, height: 200}}
+          source={require('./greenapple.png')}
+        />
+
+       <Text>Quantity: 4 </Text>
+
+       <Text> Expiry Date: 5 days </Text>
      </View>
    );
  }
@@ -283,15 +320,10 @@ placeholder='Date of purchase'
 
 
 <View style={styles.buttonContainer}>
-  <Button
-    style={{padding: 40}}
+  <AwesomeButton
     onPress={() => { alert('You have logged in');
-
-    }}
-    
-    title="Next"
-    color='black'
-  />
+    }} style = {styles.button2} 
+  > Next </AwesomeButton>
 </View>
 </View>
    );
@@ -300,9 +332,9 @@ placeholder='Date of purchase'
  
  
 class HomeScreen extends React.Component {
- //static navigationOptions={
-  // title:'DIGI  FRIDGE',
- //};
+ static navigationOptions={
+   title:'DiGi  Fridge',
+ };
  _onPressButton() {
    //alert('You tapped the button!')
    this.props.navigation.navigate('Profile')
@@ -313,13 +345,13 @@ class HomeScreen extends React.Component {
      // Try removing the `flex: 1` on the parent View.
      // The parent will not have dimensions, so the children can't expand.
      // What if you add `height: 300` instead of `flex: 1`?
-    <View style={{flex: 1,backgroundColor: 'skyblue'}}>
+    <View style={{flex: 1,backgroundColor: 'powderblue'}}>
        <Text style={styles.niceText}>YOUR DIGITAL FRIDGE</Text> 
  
        <View style={{flexDirection: "row"}}>
         <TouchableOpacity 
         activeOpacity={5.0}
-        onPress={() => this.props.navigation.navigate('Anotha')}>
+        onPress={() => this.props.navigation.navigate('Apples')}>
           <Image 
           style={{marginLeft: 10, width: 100, height: 100}}
           source={require('./tupperware2.png')}
@@ -327,7 +359,7 @@ class HomeScreen extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity 
         activeOpacity={5.0}
-        onPress={() => { alert('10 days till I go bad!');}}>
+        onPress={() => this.props.navigation.navigate('Mangoes')}>
           <Image 
           style={{marginLeft: 40, width: 100, height: 100}}
           source={require('./tupperware2.png')}
@@ -335,7 +367,7 @@ class HomeScreen extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity 
         activeOpacity={5.0}
-        onPress={() => { alert('10 days till I go bad!');}}>
+        onPress={() => this.props.navigation.navigate('Grapes')}>
           <Image 
           style={{marginLeft: 40, width: 100, height: 100}}
           source={require('./tupperware2.png')}
@@ -346,10 +378,12 @@ class HomeScreen extends React.Component {
         
         
             
- 
-       <View style={{flex: 2, backgroundColor: 'skyblue'}} />
-       <AwesomeButton onPress={() => this.props.navigation.navigate('Profile')}  style = {styles.button}>
+ 	<View style = {{flex:2, backgroundColor: 'skyblue',}}/>
+       <View style={{flex: 2, backgroundColor: 'powderblue'}} />
+       <AwesomeButton onPress={() => this.props.navigation.navigate('Manage')}  style = {styles.button}>
          + </AwesomeButton>
+         <AwesomeButton onPress={() => this.props.navigation.navigate('Manage')}  style = {{marginLeft:320, marginBottom:15}}>
+         - </AwesomeButton>
 
 
       
@@ -360,8 +394,10 @@ class HomeScreen extends React.Component {
 }
 const MainNavigator = createStackNavigator({
  Home: {screen: HomeScreen, },
- Profile: {screen: ProfileScreen},
- Anotha: {screen: AnothaOne}
+ Manage: {screen: ProfileScreen},
+ Apples: {screen: AnothaOne},
+ Mangoes: {screen: SecondOne},
+ Grapes: {screen: ThirdOne},
 },
 {
  initialRouteName:'Home',
@@ -377,8 +413,15 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: 'column',
     marginLeft: 15,
-    marginBottom:15,
-    backgroundColor: 'skyblue',
+    marginBottom:-75,
+    backgroundColor: 'powderblue',
+    padding: 10,
+  },
+  button2: {
+    textAlign:'center',
+    marginLeft: 150,
+    flexDirection: 'column',
+    backgroundColor: 'powderblue',
     padding: 10,
   },
  welcome: {
@@ -389,6 +432,7 @@ const styles = StyleSheet.create({
    backgroundColor: 'powderblue',
  },
  container: {
+ 	backgroundColor:'powderblue',
    flex: 1,
    marginLeft: 10,
    marginRight: 10,
@@ -414,6 +458,8 @@ scrollView: {
       fontSize: 30,
       fontWeight: 'bold',
       fontFamily: 'Helvetica',
+      marginBottom:20,
+      marginTop: 10,
                                    
   },
 });
