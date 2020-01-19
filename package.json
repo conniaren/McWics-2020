@@ -1,0 +1,66 @@
+{
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start --web",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@bit/formidablelabs.react-animations.bounce-in": "file:./components/bounce-in",
+    "@bit/formidablelabs.react-animations.types": "file:./components/types",
+    "@bit/formidablelabs.react-animations.utils": "file:./components/utils",
+    "@bit/grommet.grommet.box": "^2.6.5",
+    "@bit/grommet.grommet.button": "file:./components/button",
+    "@bit/grommet.grommet.calendar": "file:./components/calendar",
+    "@bit/grommet.grommet.drop": "file:./components/drop",
+    "@bit/grommet.grommet.drop-button": "file:./components/drop-button",
+    "@bit/grommet.grommet.heading": "file:./components/heading",
+    "@bit/grommet.grommet.infinite-scroll": "file:./components/infinite-scroll",
+    "@bit/grommet.grommet.internal.default-props": "file:./components/internal/default-props",
+    "@bit/grommet.grommet.internal.hocs": "file:./components/internal/hocs",
+    "@bit/grommet.grommet.internal.utils.index": "file:./components/internal/utils/index",
+    "@bit/grommet.grommet.keyboard": "file:./components/keyboard",
+    "@bit/grommet.grommet.range-input": "file:./components/range-input",
+    "@bit/grommet.grommet.select": "file:./components/select",
+    "@bit/grommet.grommet.text": "file:./components/text",
+    "@bit/grommet.grommet.text-input": "file:./components/text-input",
+    "@react-native-community/masked-view": "^0.1.6",
+    "expo": "~36.0.0",
+    "grommet": "^2.10.0",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-native": "~0.61.4",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-gesture-handler": "^1.5.3",
+    "react-native-input-scroll-view": "^1.9.5",
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-radio-button": "^2.0.1",
+    "react-native-really-awesome-button": "^1.5.1",
+    "react-native-reanimated": "~1.4.0",
+    "react-native-safe-area-context": "^0.6.2",
+    "react-native-safe-area-view": "^1.0.0",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-unimodules": "~0.7.0",
+    "react-native-web": "~0.11.7",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^2.0.15",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.6.0",
+    "babel-jest": "~24.9.0",
+    "jest": "~24.9.0",
+    "metro-react-native-babel-preset": "~0.56.0",
+    "react-test-renderer": "~16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "private": true,
+  "bit": {
+    "env": {},
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
+  }
+}
