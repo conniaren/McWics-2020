@@ -225,8 +225,15 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import LinearGradient from 'react-native-linear-gradient';
 import AwesomeButton from 'react-native-really-awesome-button/src/themes/rick';
+//import BounceIn from "@bit/formidablelabs.react-animations.bounce-in";
+//import styled, { keyframes } from "styled-components";
 import tupper from './tupperware2.png'
- 
+
+
+//const BounceInAnimation = keyframes`${BounceIn}`;
+//const BounceInDiv = styled.div`
+  //animation: infinite 5s ${BounceInAnimation};
+//`;
 class ThirdOne extends React.Component {
  render() {
    return (
@@ -364,10 +371,12 @@ class HomeScreen extends React.Component {
  render() {
    //const {navigate} = this.props.navigation;
    return (
+     
      // Try removing the `flex: 1` on the parent View.
      // The parent will not have dimensions, so the children can't expand.
      // What if you add `height: 300` instead of `flex: 1`?
     <View style={{flex: 1,backgroundColor: 'powderblue'}}>
+  
        <Text style={styles.niceText}>YOUR DIGITAL FRIDGE</Text> 
  
        <View style={{flexDirection: "row"}}>
@@ -414,7 +423,31 @@ class HomeScreen extends React.Component {
    );
  }
 }
+class LoginScreen extends React.Component{
+  static navigationOptions={
+    title:' WELCOME ',
+  };
+  render(){
+    return(
+  
+ 
+ 
+       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center' , backgroundColor:'powderblue'}}>
+        <TouchableOpacity 
+        activeOpacity={5.0}
+        onPress={() => this.props.navigation.navigate('Home')}>
+          <Image 
+          style={{width: 400, height: 400}}
+          source={require('./image1.png')}
+          />
+        </TouchableOpacity>
+        </View>
+        
+    );
+  }
+}
 const MainNavigator = createStackNavigator({
+ Login:{screen: LoginScreen},
  Home: {screen: HomeScreen, },
  Manage: {screen: ProfileScreen},
  Apples: {screen: AnothaOne},
@@ -422,7 +455,7 @@ const MainNavigator = createStackNavigator({
  Grapes: {screen: ThirdOne},
 },
 {
- initialRouteName:'Home',
+ initialRouteName:'Login',
 }
 );
  
