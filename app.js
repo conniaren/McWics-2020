@@ -223,6 +223,8 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import LinearGradient from 'react-native-linear-gradient';
+import AwesomeButton from 'react-native-really-awesome-button/src/themes/rick';
 import tupper from './tupperware2.png'
  
 class AnothaOne extends React.Component {
@@ -298,9 +300,9 @@ placeholder='Date of purchase'
  
  
 class HomeScreen extends React.Component {
- static navigationOptions={
-   title:'DIGI  FRIDGE',
- };
+ //static navigationOptions={
+  // title:'DIGI  FRIDGE',
+ //};
  _onPressButton() {
    //alert('You tapped the button!')
    this.props.navigation.navigate('Profile')
@@ -311,8 +313,8 @@ class HomeScreen extends React.Component {
      // Try removing the `flex: 1` on the parent View.
      // The parent will not have dimensions, so the children can't expand.
      // What if you add `height: 300` instead of `flex: 1`?
-    <View style={{flex: 1}}>
-       <Text style={styles.welcome}> My Fridge </Text>
+    <View style={{flex: 1,backgroundColor: 'skyblue'}}>
+       <Text style={styles.niceText}>YOUR DIGITAL FRIDGE</Text> 
  
        <View style={{flexDirection: "row"}}>
         <TouchableOpacity 
@@ -343,19 +345,13 @@ class HomeScreen extends React.Component {
         </View>
         
         
-            <Text style={styles.niceText}>YOUR DIGITAL FRIDGE</Text> 
+            
  
-       <View style={{flex: 1, backgroundColor: 'powderblue'}} />
        <View style={{flex: 2, backgroundColor: 'skyblue'}} />
-       
-       <Button
-           onPress={() => this.props.navigation.navigate('NewFood')}
-           title="Add New Fruit"
-           style = {styles.welcome}
-         />
-    
-       <View style={{flex: 3, backgroundColor: 'steelblue'}} />
-      
+       <AwesomeButton onPress={() => this.props.navigation.navigate('Profile')}  style = {styles.button}>
+         + </AwesomeButton>
+
+
       
    </View>
   
@@ -364,7 +360,7 @@ class HomeScreen extends React.Component {
 }
 const MainNavigator = createStackNavigator({
  Home: {screen: HomeScreen, },
- NewFood: {screen: ProfileScreen},
+ Profile: {screen: ProfileScreen},
  Anotha: {screen: AnothaOne}
 },
 {
@@ -378,6 +374,13 @@ export default App;
  
  
 const styles = StyleSheet.create({
+  button: {
+    flexDirection: 'column',
+    marginLeft: 15,
+    marginBottom:15,
+    backgroundColor: 'skyblue',
+    padding: 10,
+  },
  welcome: {
   // fontFamily: 'Comic Sans',
    fontSize: 20,
