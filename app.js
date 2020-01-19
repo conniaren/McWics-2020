@@ -314,16 +314,38 @@ paddingHorizontal: 40,
 marginLeft: 20,
 marginTop: 60,
 marginBottom: 60,
+borderColor:'black',
 }}
 placeholder='Date of purchase'
+/>
+
+<TextInput style={{height:40,
+paddingHorizontal: 40,
+marginLeft: 20,
+marginTop: 10,
+marginBottom: 60,
+borderColor:'black',
+}}
+placeholder='Characteristics'
+/>
+
+<TextInput style={{height:40,
+paddingHorizontal: 40,
+marginLeft: 20,
+marginTop: 10,
+marginBottom: 60,
+borderColor:'black',
+}}
+placeholder='Storage Method'
 />
 
 
 <View style={styles.buttonContainer}>
   <AwesomeButton
-    onPress={() => { alert('You have logged in');
+    onPress={() => { alert('Your food will expire on Feburary 2nd 2020');
+    this.props.navigation.navigate('Home');
     }} style = {styles.button2} 
-  > Next </AwesomeButton>
+  > ➩ </AwesomeButton>
 </View>
 </View>
    );
